@@ -1,127 +1,125 @@
-import datetime
 import requests
 from ics import Calendar, Event
+import datetime
 import pytz
 
 # ==========================================
-# DYNAMIC TEAMS & LEAGUES CONFIGURATION
+# CONFIGURATION & SOURCE ICS FEEDS
 # ==========================================
 
-# Teams to track dynamically
-TRACKED_TEAMS = [
+# Followed teams list
+TARGET_TEAMS = [
     "Liverpool",
     "Auckland FC",
-    "New Zealand Warriors",
     "Warriors",
-    "Sydney Roosters",
     "Roosters",
     "All Blacks",
-    "New Zealand",
     "Black Caps"
 ]
 
-# ESPN Public API Endpoints (Soccer & Rugby League/Union)
-ENDPOINTS = [
-    # English Premier League
-    "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
-    # Australian A-League Men
-    "https://site.api.espn.com/apis/site/v2/sports/soccer/aus.1/scoreboard",
-    # NRL (National Rugby League)
-    "https://site.api.espn.com/apis/site/v2/sports/rugby/league/scoreboard",
-    # International Rugby Union
-    "https://site.api.espn.com/apis/site/v2/sports/rugby/union/scoreboard"
+# Reliable source ICS feeds
+SOURCE_FEEDS = [
+    # Liverpool (Football Web Pages Feed)
+    "https://www.footballwebpages.co.uk/liverpool/calendar.ics",
+    # Reddit LFC Maintained Feed Backup
+    "https://calendar.google.com/calendar/ical/p520al5mfgqq5m2a8pu021nv0c%40group.calendar.google.com/public/basic.ics"
 ]
 
-# Regional TV Rights Lookup
+# Custom UK and NZ Broadcast Mapping Rules
 BROADCAST_RIGHTS = {
-    "Liverpool": {"UK": "Sky Sports / TNT Sports / Amazon Prime", "NZ": "Sky Sport NOW / Sky Sport 1"},
-    "Auckland FC": {"UK": "TNT Sports / Sky Sports", "NZ": "Sky Sport 1 / Sky Sport NOW"},
-    "Warriors": {"UK": "Sky Sports Action / Arena", "NZ": "Sky Sport 4 / Sky Sport NOW"},
-    "Roosters": {"UK": "Sky Sports Action / Arena", "NZ": "Sky Sport 4 / Sky Sport NOW"},
-    "All Blacks": {"UK": "Sky Sports / TNT Sports", "NZ": "Sky Sport 1 / Sky Sport NOW"},
-    "Black Caps": {"UK": "TNT Sports / Sky Sports", "NZ": "TVNZ 1 / TVNZ+ / Sky Sport"},
-    "Default": {"UK": "Sky Sports / TNT Sports", "NZ": "Sky Sport NOW"}
+    "Liverpool": {
+        "UK": "Sky Sports / TNT Sports / Amazon Prime / BBC",
+        "NZ": "Sky Sport NOW / Sky Sport 1"
+    },
+    "Auckland FC": {
+        "UK": "TNT Sports / Sky Sports",
+        "NZ": "Sky Sport 1 / Sky Sport NOW"
+    },
+    "Warriors": {
+        "UK": "Sky Sports Action / Arena",
+        "NZ": "Sky Sport 4 / Sky Sport NOW"
+    },
+    "Roosters": {
+        "UK": "Sky Sports Action / Arena",
+        "NZ": "Sky Sport 4 / Sky Sport NOW"
+    },
+    "All Blacks": {
+        "UK": "Sky Sports / TNT Sports",
+        "NZ": "Sky Sport 1 / Sky Sport NOW"
+    },
+    "Black Caps": {
+        "UK": "TNT Sports / Sky Sports",
+        "NZ": "TVNZ 1 / TVNZ+ / Sky Sport"
+    },
+    "Default": {
+        "UK": "Sky Sports / TNT Sports",
+        "NZ": "Sky Sport NOW"
+    }
 }
 
-def get_tv_rights(team_name):
-    for key, rights in BROADCAST_RIGHTS.items():
-        if key.lower() in team_name.lower():
+def get_broadcast_info(title):
+    """Determine UK/NZ broadcast rights based on match title."""
+    for team, rights in BROADCAST_RIGHTS.items():
+        if team.lower() in title.lower():
             return rights
     return BROADCAST_RIGHTS["Default"]
 
-def fetch_dynamic_fixtures():
-    events = []
-    
-    for url in ENDPOINTS:
+def build_aggregated_calendar():
+    out_calendar = Calendar()
+    seen_events = set()
+
+    for url in SOURCE_FEEDS:
         try:
-            res = requests.get(url, timeout=10)
+            res = requests.get(url, timeout=15)
             if res.status_code != 200:
+                print(f"Skipping feed (Status {res.status_code}): {url}")
                 continue
+
+            in_calendar = Calendar(res.text)
             
-            data = res.json()
-            for ev in data.get('events', []):
-                name = ev.get('name', '')
+            for event in in_calendar.events:
+                title = event.name or ""
                 
-                # Check if any tracked team is playing in this match
+                # Verify if this match involves one of your tracked teams
                 matched_team = None
-                for team in TRACKED_TEAMS:
-                    if team.lower() in name.lower():
+                for team in TARGET_TEAMS:
+                    if team.lower() in title.lower():
                         matched_team = team
                         break
-                
-                if matched_team:
-                    # Extract date and venue
-                    date_str = ev.get('date') # ISO format: YYYY-MM-DDTHH:MMZ
-                    competitions = ev.get('competitions', [{}])[0]
-                    venue = competitions.get('venue', {}).get('fullName', 'TBC')
-                    league_name = data.get('leagues', [{}])[0].get('name', 'Sports Event')
+                        
+                if matched_team or "Liverpool" in url:
+                    # Deduplicate by start date and title
+                    event_key = f"{event.begin.strftime('%Y-%m-%d-%H:%M')}-{title}"
+                    if event_key in seen_events:
+                        continue
+                    seen_events.add(event_key)
+
+                    # Create enriched event object
+                    tv_info = get_broadcast_info(title)
+                    new_event = Event()
+                    new_event.name = f"🔴 {title}" if not title.startswith("🔴") else title
+                    new_event.begin = event.begin
+                    new_event.duration = event.duration or datetime.timedelta(hours=2)
+                    new_event.location = f"UK: {tv_info['UK']} | NZ: {tv_info['NZ']}"
                     
-                    if date_str:
-                        events.append({
-                            'summary': f"🔴 {name}",
-                            'start': date_str,
-                            'league': league_name,
-                            'venue': venue,
-                            'team_key': matched_team
-                        })
+                    venue = event.location or "TBC"
+                    new_event.description = (
+                        f"📍 Location / Venue: {venue}\n\n"
+                        f"📺 WHERE TO WATCH:\n"
+                        f"• 🇬🇧 UK: {tv_info['UK']}\n"
+                        f"• 🇳🇿 NZ: {tv_info['NZ']}\n\n"
+                        f"🔄 Auto-synced via My Sports Calendar Pipeline."
+                    )
+
+                    out_calendar.events.add(new_event)
+
         except Exception as e:
-            print(f"Error fetching from {url}: {e}")
-            
-    return events
+            print(f"Error processing feed {url}: {e}")
 
-def build_ical_feed():
-    cal = Calendar()
-    fixtures = fetch_dynamic_fixtures()
-    
-    for item in fixtures:
-        event = Event()
-        event.name = item['summary']
-        
-        try:
-            # Parse ISO timestamp from ESPN
-            clean_date = item['start'].replace('Z', '+00:00')
-            dt = datetime.datetime.fromisoformat(clean_date)
-            event.begin = dt
-            event.duration = datetime.timedelta(hours=2)
-        except Exception:
-            continue
+    with open("sports.ics", "w", encoding="utf-8") as f:
+        f.writelines(out_calendar.serialize_iter())
 
-        tv_info = get_tv_rights(item['team_key'])
-        event.location = f"UK: {tv_info['UK']} | NZ: {tv_info['NZ']}"
-        event.description = (
-            f"🏆 Competition: {item['league']}\n"
-            f"📍 Venue: {item['venue']}\n\n"
-            f"📺 WHERE TO WATCH:\n"
-            f"• 🇬🇧 UK: {tv_info['UK']}\n"
-            f"• 🇳🇿 NZ: {tv_info['NZ']}\n\n"
-            f"🔄 Automated dynamic sync via My Sports Calendar Pipeline."
-        )
-        cal.events.add(event)
-        
-    with open('sports.ics', 'w', encoding='utf-8') as f:
-        f.writelines(cal.serialize_iter())
-        
-    print(f"Successfully generated dynamic sports.ics with {len(cal.events)} live events!")
+    print(f"Successfully generated sports.ics with {len(out_calendar.events)} total events!")
 
 if __name__ == "__main__":
-    build_ical_feed()
+    build_aggregated_calendar()
