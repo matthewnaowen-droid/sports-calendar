@@ -5,8 +5,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Newcastle United v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20260823T163000
 DTEND;TZID=Europe/London:20260823T183000
-DTSTAMP:20260815T135344Z
-UID:8f7036ae-f35d-4325-ae51-5730c58b06e9@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:941b3676-e940-4acc-907a-704b1365e128@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports Main Event\n
  • 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My Sp
  orts Calendar Pipeline.
@@ -16,8 +16,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Nottingham Forest - Premier League
 DTSTART;TZID=Europe/London:20260829T123000
 DTEND;TZID=Europe/London:20260829T143000
-DTSTAMP:20260815T135344Z
-UID:8323ee64-d055-4c85-aeb8-152ae5d78491@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:8af11cb0-bd2e-4504-9c79-404c451e071e@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: TNT Sports 1\n• 🇳
  🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My Sports Cal
  endar Pipeline.
@@ -27,8 +27,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Ipswich Town v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20260904T200000
 DTEND;TZID=Europe/London:20260904T220000
-DTSTAMP:20260815T135344Z
-UID:2cea8dbb-5bf1-4fed-8b92-77999e2dc32d@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:59ab94ff-70fd-48c0-b55f-c3420f3d793a@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -38,8 +38,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Fulham - Premier League
 DTSTART;TZID=Europe/London:20260912T150000
 DTEND;TZID=Europe/London:20260912T170000
-DTSTAMP:20260815T135344Z
-UID:a9a00a48-4374-4c89-be80-08bb32a7c677@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:0b71fe72-352a-4e4b-ace2-12b737933ee9@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -49,8 +49,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 AFC Bournemouth v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20260920T140000
 DTEND;TZID=Europe/London:20260920T160000
-DTSTAMP:20260815T135344Z
-UID:75995004-86e3-4d40-b35c-a944270ee625@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:c9938fa5-52a3-454c-85db-d577a8967a0d@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -60,8 +60,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Manchester City - Premier League
 DTSTART;TZID=Europe/London:20261010T150000
 DTEND;TZID=Europe/London:20261010T170000
-DTSTAMP:20260815T135344Z
-UID:37c2a236-93b5-4322-9eb8-90d0aa5ee7e4@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:94d65ce8-0412-4443-8008-035fee2ab69e@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -71,8 +71,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Brentford v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20261017T150000
 DTEND;TZID=Europe/London:20261017T170000
-DTSTAMP:20260815T135344Z
-UID:251f45d0-70bf-422f-a31f-a74615062fdb@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:40bdbca0-b90e-4692-bd2d-7d6eff6ba184@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -83,8 +83,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Brighton & Hove Albion - Premier League
 DTSTART;TZID=Europe/London:20261024T150000
 DTEND;TZID=Europe/London:20261024T170000
-DTSTAMP:20260815T135344Z
-UID:349af064-7c47-41c5-bf56-d1eebd5bae55@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:4d87993b-32ff-448a-b3ca-932acca80850@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -94,8 +94,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Arsenal - Premier League
 DTSTART;TZID=Europe/London:20261031T150000
 DTEND;TZID=Europe/London:20261031T170000
-DTSTAMP:20260815T135344Z
-UID:3396807f-a6b5-4cf3-992c-2255d225d040@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:42ec5650-e046-4f8a-88eb-ca6fc14f72e8@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -105,8 +105,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Crystal Palace v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20261107T150000
 DTEND;TZID=Europe/London:20261107T170000
-DTSTAMP:20260815T135344Z
-UID:8fd428e1-8ddf-4ab0-9f10-bcea73a804c3@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:d320e827-7549-405d-8a13-356ec920900f@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -116,8 +116,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Manchester United - Premier League
 DTSTART;TZID=Europe/London:20261121T150000
 DTEND;TZID=Europe/London:20261121T170000
-DTSTAMP:20260815T135344Z
-UID:33ec0652-f6d5-4048-91e9-beefa09d8779@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:0970bed5-93bc-4cc4-aef5-b279610d6462@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -127,8 +127,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Everton v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20261128T150000
 DTEND;TZID=Europe/London:20261128T170000
-DTSTAMP:20260815T135344Z
-UID:48f68027-b9a4-4e26-ac89-51f226e4b39c@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:c7b34d79-82a5-4944-a672-bd9725b4f49d@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -138,8 +138,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Sunderland - Premier League
 DTSTART;TZID=Europe/London:20261202T200000
 DTEND;TZID=Europe/London:20261202T220000
-DTSTAMP:20260815T135344Z
-UID:a25dc39c-4676-4231-8b5c-1aff51d04cf4@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:9b9a4cea-137e-49b4-a3ea-4d4dd5a29cf9@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -149,8 +149,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Chelsea v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20261205T150000
 DTEND;TZID=Europe/London:20261205T170000
-DTSTAMP:20260815T135344Z
-UID:968f1111-26f4-4f3f-96ea-56f47157c308@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:4f146f74-9213-4c29-8ec5-88be10261ea0@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -160,8 +160,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Leeds United - Premier League
 DTSTART;TZID=Europe/London:20261212T150000
 DTEND;TZID=Europe/London:20261212T170000
-DTSTAMP:20260815T135344Z
-UID:c481d89b-21b6-44f1-b95d-de7965bf7c40@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:cea1af73-21ee-415e-b0e1-1b7ea18396b9@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -171,8 +171,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Tottenham Hotspur - Premier League
 DTSTART;TZID=Europe/London:20261219T150000
 DTEND;TZID=Europe/London:20261219T170000
-DTSTAMP:20260815T135344Z
-UID:08179fa0-a757-4e06-a58f-2708be1a7373@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:98fdd102-5aed-4bfa-bc9a-cc855249ba13@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -182,8 +182,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Hull City v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20261226T150000
 DTEND;TZID=Europe/London:20261226T170000
-DTSTAMP:20260815T135344Z
-UID:f6b62696-063d-468f-95fa-a90a3fbed78a@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:84aa51e6-62ce-4ff0-83cd-801153e1ee66@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -194,8 +194,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Aston Villa v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20261230T200000
 DTEND;TZID=Europe/London:20261230T220000
-DTSTAMP:20260815T135344Z
-UID:aa0a5bd7-8e74-43a7-8fd4-8285479e09ff@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:a5e4f547-4436-4047-b4c6-3895c86f8802@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -205,8 +205,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Coventry City - Premier League
 DTSTART;TZID=Europe/London:20270102T150000
 DTEND;TZID=Europe/London:20270102T170000
-DTSTAMP:20260815T135344Z
-UID:0d1a7a0e-e7d7-42b6-9355-99c7db4e0723@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:fee3536e-0d3c-4fb5-baad-83dd9d35ca4b@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -216,8 +216,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Sunderland v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270106T200000
 DTEND;TZID=Europe/London:20270106T220000
-DTSTAMP:20260815T135344Z
-UID:9dd57dcc-ff8c-4ef0-a4bd-fd1e80aec559@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:0101be2f-b54c-4cac-9d1f-01925a26d9b0@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -227,8 +227,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Crystal Palace - Premier League
 DTSTART;TZID=Europe/London:20270116T150000
 DTEND;TZID=Europe/London:20270116T170000
-DTSTAMP:20260815T135344Z
-UID:4ae90455-2d4c-44a9-86fa-759215ab20c8@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:20d4f4eb-cf01-4309-8b4c-03067b16b69f@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -238,8 +238,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Manchester United v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270123T150000
 DTEND;TZID=Europe/London:20270123T170000
-DTSTAMP:20260815T135344Z
-UID:dafef188-3139-41fb-ba49-a50bed283f24@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:4007bb28-4c93-42f5-99ca-e85fad729e5f@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -249,8 +249,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Everton - Premier League
 DTSTART;TZID=Europe/London:20270130T150000
 DTEND;TZID=Europe/London:20270130T170000
-DTSTAMP:20260815T135344Z
-UID:a32f66d2-54d7-42c8-bc79-6b6a7879f557@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:be4fe49e-9df5-4cc6-bdb3-da61a77115ad@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -260,8 +260,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Arsenal v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270206T150000
 DTEND;TZID=Europe/London:20270206T170000
-DTSTAMP:20260815T135344Z
-UID:873a10f8-e55e-4f22-905e-e8a717f67062@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:c7fdf744-a274-438b-bcb6-4ef5881c6f0e@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -272,8 +272,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Coventry City v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270210T200000
 DTEND;TZID=Europe/London:20270210T220000
-DTSTAMP:20260815T135344Z
-UID:8984dc73-9c6c-4a01-b690-addb76c752ed@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:78781fa7-4a67-4c2a-b23e-9c4f509e2986@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -284,8 +284,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Hull City - Premier League
 DTSTART;TZID=Europe/London:20270220T150000
 DTEND;TZID=Europe/London:20270220T170000
-DTSTAMP:20260815T135344Z
-UID:4a93e9b6-1ee3-4cf9-a12f-27ff4487dbf9@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:2aebafdd-90a3-44e5-8cc3-4be9807ab350@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -295,8 +295,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Tottenham Hotspur v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270227T150000
 DTEND;TZID=Europe/London:20270227T170000
-DTSTAMP:20260815T135344Z
-UID:29731ddd-8d23-4cbe-8390-8a932fbde698@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:77554550-a006-4545-a70c-74cd95e1f861@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -307,8 +307,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Aston Villa - Premier League
 DTSTART;TZID=Europe/London:20270303T200000
 DTEND;TZID=Europe/London:20270303T220000
-DTSTAMP:20260815T135344Z
-UID:9d47549f-a2cc-4f77-bb03-be52cf22565f@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:9a430c2e-26d9-4bba-afea-ac89a0d765d3@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -318,8 +318,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Ipswich Town - Premier League
 DTSTART;TZID=Europe/London:20270313T150000
 DTEND;TZID=Europe/London:20270313T170000
-DTSTAMP:20260815T135344Z
-UID:293759d5-412b-498b-8549-02bf4d5b66af@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:0d12c35a-883a-43f0-a675-2b8252142058@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -329,8 +329,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Fulham v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270320T150000
 DTEND;TZID=Europe/London:20270320T170000
-DTSTAMP:20260815T135344Z
-UID:e8b24e0c-a1af-4f17-8752-799fce866566@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:79f2a01a-c158-41e7-a711-0bcbb3437586@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -340,8 +340,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Newcastle United - Premier League
 DTSTART;TZID=Europe/London:20270410T150000
 DTEND;TZID=Europe/London:20270410T170000
-DTSTAMP:20260815T135344Z
-UID:5ab9be0c-5ba5-43d8-b2d9-cde868748262@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:71db33f0-5a09-460c-b0ca-9572dfa09736@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -351,8 +351,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Nottingham Forest v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270417T150000
 DTEND;TZID=Europe/London:20270417T170000
-DTSTAMP:20260815T135344Z
-UID:40bd0e63-a1b8-4f52-8041-bf7d744b7c44@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:c7660be0-2a83-4b05-a6fb-9cd88e886172@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -362,8 +362,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Leeds United v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270424T150000
 DTEND;TZID=Europe/London:20270424T170000
-DTSTAMP:20260815T135344Z
-UID:94ea3480-b759-46a8-97d9-2ec8ef84de2f@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:9edd0ea3-d857-4161-908d-4bff64a70f40@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -373,8 +373,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Chelsea - Premier League
 DTSTART;TZID=Europe/London:20270501T150000
 DTEND;TZID=Europe/London:20270501T170000
-DTSTAMP:20260815T135344Z
-UID:06427a89-e3ff-4897-979f-0edadc8a6305@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:e18fb9e9-3249-4f2b-8620-b06521d97a2d@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -384,8 +384,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Manchester City v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270508T150000
 DTEND;TZID=Europe/London:20270508T170000
-DTSTAMP:20260815T135344Z
-UID:05821e05-b114-4735-a0e6-1c6c27b7ad9f@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:1e786257-430f-4894-864a-567e6498fbf4@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -395,8 +395,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v Brentford - Premier League
 DTSTART;TZID=Europe/London:20270515T150000
 DTEND;TZID=Europe/London:20270515T170000
-DTSTAMP:20260815T135344Z
-UID:3bd60a99-d27c-4faa-8ad8-6c52e4db82bc@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:261964fa-10bc-411f-bd26-c1b1fd63d549@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -406,8 +406,8 @@ BEGIN:VEVENT
 SUMMARY:🔴 Brighton & Hove Albion v Liverpool - Premier League
 DTSTART;TZID=Europe/London:20270523T150000
 DTEND;TZID=Europe/London:20270523T170000
-DTSTAMP:20260815T135344Z
-UID:42ff5ade-2d1c-42ec-a4e1-0d696fa2c486@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:a5bbd087-1333-40f4-aaa1-8ac0455c9be4@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports / TNT Sports
  \n• 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My 
  Sports Calendar Pipeline.
@@ -418,11 +418,44 @@ BEGIN:VEVENT
 SUMMARY:🔴 Liverpool v AFC Bournemouth - Premier League
 DTSTART;TZID=Europe/London:20270530T160000
 DTEND;TZID=Europe/London:20270530T180000
-DTSTAMP:20260815T135344Z
-UID:9749836e-b9bc-4ab2-afc7-6639d8f69cab@mysportscalendar
+DTSTAMP:20260815T140219Z
+UID:000c1dbf-c211-4126-8684-2b571a035db5@mysportscalendar
 DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports Main Event\n
  • 🇳🇿 NZ: Sky Sport NOW / Sky Sport 1\n\n🔄 Auto-synced via My Sp
  orts Calendar Pipeline.
 LOCATION:Anfield\, Anfield Road\, Liverpool\, Merseyside\, L4 0TH
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏉 Güemes vs Atlético de Rafaela
+DTSTART:20260824T190000Z
+DTEND:20260824T210000Z
+DTSTAMP:20260815T140219Z
+UID:cc4b1cfe-6a50-4578-92e7-a5f64feaf8e5@mysportscalendar
+DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports Action / Are
+ na\n• 🇳🇿 NZ: Sky Sport 4 / Sky Sport NOW\n\n🔄 Auto-synced via M
+ y Sports Calendar Pipeline.
+LOCATION:Estadio Arturo Jiya Miranda
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏉 River Plate vs Argentinos Juniors
+DTSTART:20260816T210000Z
+DTEND:20260816T230000Z
+DTSTAMP:20260815T140219Z
+UID:468eee00-02d5-49e6-a701-df65d0294343@mysportscalendar
+DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: Sky Sports Action / Are
+ na\n• 🇳🇿 NZ: Sky Sport 4 / Sky Sport NOW\n\n🔄 Auto-synced via M
+ y Sports Calendar Pipeline.
+LOCATION:Estadio Mâs Monumental
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏏 Zebre vs Bulls
+DTSTART:20260926T163000Z
+DTEND:20260926T183000Z
+DTSTAMP:20260815T140219Z
+UID:012b7144-d02e-4834-a8ef-94971b04c6de@mysportscalendar
+DESCRIPTION:📺 WHERE TO WATCH:\n• 🇬🇧 UK: TNT Sports\n• 🇳
+ 🇿 NZ: TVNZ 1 / Sky Sport\n\n🔄 Auto-synced via My Sports Calendar Pip
+ eline.
+LOCATION:Stadio Sergio Lanfranchi
 END:VEVENT
 END:VCALENDAR

@@ -3,21 +3,18 @@ from icalendar import Calendar, Event
 import datetime
 import pytz
 import uuid
+from dateutil import parser
 
-# Verified working feeds from terminal test
-TEAM_FEEDS = {
-    "Liverpool": [
-        "https://www.footballwebpages.co.uk/liverpool/calendar.ics"
-    ],
-    "Warriors": [
-        "https://sync.ecal.com/ecal-sub/65b1bc3a5951c50008bc0a2b/New%20Zealand%20Warriors.ics"
-    ],
-    "Roosters": [
-        "https://sync.ecal.com/ecal-sub/65b1bc3a5951c50008bc0a2b/Sydney%20Roosters.ics"
-    ],
-    "All Blacks": [
-        "https://sync.ecal.com/ecal-sub/65b1bc3a5951c50008bc0a2b/All%20Blacks.ics"
-    ]
+# Live Liverpool iCal Feed
+LIVERPOOL_FEED = "https://www.footballwebpages.co.uk/liverpool/calendar.ics"
+
+# TheSportsDB Team IDs (Free Open API Tier)
+SPORTS_DB_TEAMS = {
+    "Warriors": "135153",      # NZ Warriors (NRL)
+    "Roosters": "135151",      # Sydney Roosters (NRL)
+    "All Blacks": "135288",    # New Zealand All Blacks
+    "Auckland FC": "140683",   # Auckland FC (A-League)
+    "Black Caps": "135606"     # NZ Cricket
 }
 
 HEADERS = {
@@ -29,7 +26,9 @@ def resolve_broadcast_channels(team, dtstart):
         return {"UK": "Sky Sports Action / Arena", "NZ": "Sky Sport 4 / Sky Sport NOW"}
     elif team == "All Blacks":
         return {"UK": "Sky Sports Action", "NZ": "Sky Sport 1 / Sky Sport NOW"}
-    elif team == "Liverpool":
+    elif team == "Black Caps":
+        return {"UK": "TNT Sports", "NZ": "TVNZ 1 / Sky Sport"}
+    elif team in ["Liverpool", "Auckland FC"]:
         if isinstance(dtstart, datetime.datetime):
             dt_utc = dtstart.astimezone(pytz.utc) if dtstart.tzinfo else pytz.utc.localize(dtstart)
             if dt_utc.weekday() == 5 and dt_utc.hour in [11, 12]:
@@ -46,72 +45,116 @@ def build_aggregated_calendar():
 
     seen_event_keys = set()
     now_utc = datetime.datetime.now(pytz.utc)
-    parsed_counts = {team: 0 for team in TEAM_FEEDS.keys()}
+    parsed_counts = {"Liverpool": 0, "Warriors": 0, "Roosters": 0, "All Blacks": 0, "Auckland FC": 0, "Black Caps": 0}
 
-    for team, feeds in TEAM_FEEDS.items():
-        for url in feeds:
-            try:
-                res = requests.get(url, headers=HEADERS, timeout=15)
-                if res.status_code != 200:
-                    continue
+    # 1. Parse Liverpool Live Feed
+    try:
+        res = requests.get(LIVERPOOL_FEED, headers=HEADERS, timeout=15)
+        if res.status_code == 200:
+            in_calendar = Calendar.from_ical(res.text)
+            for component in in_calendar.walk():
+                if component.name == "VEVENT":
+                    title = str(component.get('summary', ''))
+                    dtstart = component.get('dtstart')
+                    if not dtstart:
+                        continue
+                    
+                    start_time = dtstart.dt
+                    time_str = start_time.strftime('%Y-%m-%d-%H:%M') if isinstance(start_time, datetime.datetime) else str(start_time)
+                    dedup_key = f"{time_str}_liverpool"
+                    
+                    if dedup_key in seen_event_keys:
+                        continue
+                    seen_event_keys.add(dedup_key)
 
-                in_calendar = Calendar.from_ical(res.text)
-                
-                for component in in_calendar.walk():
-                    if component.name == "VEVENT":
-                        title = str(component.get('summary', ''))
-                        dtstart = component.get('dtstart')
-                        if not dtstart:
-                            continue
+                    tv_info = resolve_broadcast_channels("Liverpool", start_time)
+                    new_event = Event()
+                    
+                    summary_text = f"🔴 {title}" if not title.startswith("🔴") else title
+                    new_event.add('summary', summary_text)
+                    new_event.add('dtstart', start_time)
+                    
+                    dtend = component.get('dtend')
+                    if dtend:
+                        new_event.add('dtend', dtend.dt)
+                    else:
+                        new_event.add('dtend', start_time + datetime.timedelta(hours=2) if isinstance(start_time, datetime.datetime) else start_time + datetime.timedelta(days=1))
                         
-                        start_time = dtstart.dt
-                        time_str = start_time.strftime('%Y-%m-%d-%H:%M') if isinstance(start_time, datetime.datetime) else str(start_time)
-                        dedup_key = f"{time_str}_{team.lower()}"
-                        
-                        if dedup_key in seen_event_keys:
-                            continue
-                        seen_event_keys.add(dedup_key)
+                    new_event.add('dtstamp', now_utc)
+                    new_event.add('uid', f"{uuid.uuid4()}@mysportscalendar")
+                    
+                    venue = str(component.get('location', 'TBC'))
+                    new_event.add('location', venue)
+                    
+                    description_str = (
+                        f"📺 WHERE TO WATCH:\n"
+                        f"• 🇬🇧 UK: {tv_info['UK']}\n"
+                        f"• 🇳🇿 NZ: {tv_info['NZ']}\n\n"
+                        f"🔄 Auto-synced via My Sports Calendar Pipeline."
+                    )
+                    new_event.add('description', description_str)
 
-                        tv_info = resolve_broadcast_channels(team, start_time)
-                        new_event = Event()
-                        
-                        summary_text = f"🔴 {title}" if not title.startswith("🔴") else title
-                        new_event.add('summary', summary_text)
-                        new_event.add('dtstart', start_time)
-                        
-                        dtend = component.get('dtend')
-                        if dtend:
-                            new_event.add('dtend', dtend.dt)
-                        else:
-                            if isinstance(start_time, datetime.datetime):
-                                new_event.add('dtend', start_time + datetime.timedelta(hours=2))
-                            else:
-                                new_event.add('dtend', start_time + datetime.timedelta(days=1))
-                            
-                        new_event.add('dtstamp', now_utc)
-                        new_event.add('uid', f"{uuid.uuid4()}@mysportscalendar")
-                        
-                        venue = str(component.get('location', 'TBC'))
-                        new_event.add('location', venue)
-                        
-                        description_str = (
-                            f"📺 WHERE TO WATCH:\n"
-                            f"• 🇬🇧 UK: {tv_info['UK']}\n"
-                            f"• 🇳🇿 NZ: {tv_info['NZ']}\n\n"
-                            f"🔄 Auto-synced via My Sports Calendar Pipeline."
-                        )
-                        new_event.add('description', description_str)
+                    out_calendar.add_component(new_event)
+                    parsed_counts["Liverpool"] += 1
+    except Exception as e:
+        print(f"Error processing Liverpool feed: {e}")
 
-                        out_calendar.add_component(new_event)
-                        parsed_counts[team] += 1
+    # 2. Fetch Multi-Sport Schedules via TheSportsDB API
+    for team, team_id in SPORTS_DB_TEAMS.items():
+        api_url = f"https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id={team_id}"
+        try:
+            res = requests.get(api_url, headers=HEADERS, timeout=10)
+            if res.status_code == 200:
+                data = res.json()
+                events = data.get("events") or []
+                for evt in events:
+                    event_title = evt.get("strEvent", f"{team} Match")
+                    str_date = evt.get("strTimestamp") or f"{evt.get('dateEvent')}T{evt.get('strTime', '00:00:00')}"
+                    
+                    try:
+                        start_time = parser.parse(str_date)
+                        if not start_time.tzinfo:
+                            start_time = pytz.utc.localize(start_time)
+                    except Exception:
+                        continue
 
-            except Exception as e:
-                print(f"Error processing {team} feed: {e}")
+                    time_str = start_time.strftime('%Y-%m-%d-%H:%M')
+                    dedup_key = f"{time_str}_{team.lower()}"
+
+                    if dedup_key in seen_event_keys:
+                        continue
+                    seen_event_keys.add(dedup_key)
+
+                    tv_info = resolve_broadcast_channels(team, start_time)
+                    new_event = Event()
+
+                    icon = "🏉" if team in ["Warriors", "Roosters", "All Blacks"] else ("🏏" if team == "Black Caps" else "⚽")
+                    new_event.add('summary', f"{icon} {event_title}")
+                    new_event.add('dtstart', start_time)
+                    new_event.add('dtend', start_time + datetime.timedelta(hours=2))
+                    new_event.add('dtstamp', now_utc)
+                    new_event.add('uid', f"{uuid.uuid4()}@mysportscalendar")
+                    
+                    venue = evt.get("strVenue") or "TBC"
+                    new_event.add('location', venue)
+
+                    description_str = (
+                        f"📺 WHERE TO WATCH:\n"
+                        f"• 🇬🇧 UK: {tv_info['UK']}\n"
+                        f"• 🇳🇿 NZ: {tv_info['NZ']}\n\n"
+                        f"🔄 Auto-synced via My Sports Calendar Pipeline."
+                    )
+                    new_event.add('description', description_str)
+
+                    out_calendar.add_component(new_event)
+                    parsed_counts[team] += 1
+        except Exception as e:
+            print(f"Error fetching API data for {team}: {e}")
 
     with open("sports.ics", "wb") as f:
         f.write(out_calendar.to_ical())
 
-    print("\n--- Verified Parse Summary ---")
+    print("\n--- Verified API Parse Summary ---")
     for t, c in parsed_counts.items():
         print(f"• {t}: {c} events")
 
